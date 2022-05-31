@@ -1,7 +1,6 @@
 kind: pipeline
 name: default
 
-
   - name: build
     image: golang:latest
     environment:
@@ -47,7 +46,7 @@ name: default
     when:
       event: push
       branch: master
-
+#
   # - name: release
   #   image: plugins/docker
   #   settings:
