@@ -1,15 +1,8 @@
 kind: pipeline
 name: default
 
-steps:
-  - name: linter
-    image: golang:1.13.15
-    commands:
-      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
-      - golangci-lint run
-
   - name: build
-    image: golang:1.13.15
+    image: golang:latest
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
       GOOS: linux
