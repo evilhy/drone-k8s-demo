@@ -12,16 +12,18 @@ steps:
     commands:
       - go build -o demo-app
 
-  - name: 打包Docker镜像并推送
+  - name: docker
     image: plugins/docker
     settings:
-      storage_path: /mnt/sda4
-      registry: hub.docker.com
-      repo: evilhy/golang-demo
+      repo: evilhy/devops-demo
       use_cache: true
-      username: evilhy
-      password: 060924
-      auto_tag: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    tags:
+      - latest
+      # - ${DRONE_COMMIT_SHA:0:8}
     when:
       event: push
       branch: master
