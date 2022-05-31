@@ -1,3 +1,6 @@
+##私有仓库配置
+##参考https://plugins.drone.io/plugins/docker
+
 kind: pipeline
 name: default
 
@@ -21,14 +24,18 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
+#insecure http协议true https协议false
       insecure: true
+#registry 私有仓库地址  repo私有仓库写全地址 
       registry: my.icm.icu:1080
       repo: my.icm.icu:1080/library/devops-demo
       use_cache: true
+#drone上secret上配置用户密码传参，也可以直接写账密username：xxx
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
+#容器标签用变量，打包次数，其他变量参考官网https://docs.drone.io/pipeline/environment/reference/
       tags: ${DRONE_BUILD_NUMBER}
 #      - ${DRONE_COMMIT_SHA:0:8}
     when:
