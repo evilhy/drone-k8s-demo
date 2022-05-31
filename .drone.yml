@@ -15,6 +15,7 @@ steps:
   - name: 打包Docker镜像并推送
     image: plugins/docker
     settings:
+      storage_path: /mnt/sda4
       registry: hub.docker.com
       repo: evilhy/golang-demo
       use_cache: true
