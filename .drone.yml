@@ -35,7 +35,7 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-#容器标签用变量，打包次数，其他变量参考官网https://docs.drone.io/pipeline/environment/reference/
+#容器标签用变量，打包次数，其他变量参考官网https://docs.drone.io/pipeline/environment/reference/ and https://docs.drone.io/pipeline/environment/substitution/
       tags: ${DRONE_BUILD_NUMBER}
 #      - ${DRONE_COMMIT_SHA:0:8}
     when:
