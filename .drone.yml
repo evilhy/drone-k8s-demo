@@ -25,10 +25,8 @@ steps:
       registry: my.icm.icu:1080
       repo: library/devops-demo
       use_cache: true
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
+      username: admin
+      password: Hy.060924
       tags: ${DRONE_BUILD_NUMBER}
 #      - ${DRONE_COMMIT_SHA:0:8}
     when:
