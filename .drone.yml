@@ -1,6 +1,7 @@
 kind: pipeline
 name: default
 
+
   - name: build
     image: golang:latest
     environment:
