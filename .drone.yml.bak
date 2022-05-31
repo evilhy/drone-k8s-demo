@@ -1,3 +1,5 @@
+##公共仓库配置
+
 kind: pipeline
 name: default
 
