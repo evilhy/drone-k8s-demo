@@ -23,7 +23,7 @@ steps:
     settings:
       insecure: true
       registry: my.icm.icu:1080
-      repo: library/devops-demo
+      repo: my.icm.icu:1080/library/devops-demo
       use_cache: true
       username: admin
       password: Hy.060924
