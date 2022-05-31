@@ -11,6 +11,12 @@ steps:
       CGO_ENABLED: 0
     commands:
       - go build -o demo-app
+   
+  - name: greeting
+    image: alpine
+    commands:
+    - echo hello
+    - echo world
 
   - name: docker
     image: plugins/docker
