@@ -28,8 +28,8 @@ steps:
       password:
         from_secret: docker_password
     tags:
-#      - {{build.number}}
-      - ${DRONE_COMMIT_SHA:0:8}
+      - test:v1
+#      - ${DRONE_COMMIT_SHA:0:8}
     when:
       event: push
       branch: master
