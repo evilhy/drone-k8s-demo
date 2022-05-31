@@ -27,8 +27,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-    tags:
-      - test:v1
+      auto_tag: true
+#    tags:
+#      - test:v1
 #      - ${DRONE_COMMIT_SHA:0:8}
     when:
       event: push
