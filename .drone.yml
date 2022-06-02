@@ -38,6 +38,7 @@ steps:
 #容器标签用变量，打包次数，其他变量参考官网https://docs.drone.io/pipeline/environment/reference/ and https://docs.drone.io/pipeline/environment/substitution/
       tags: ${DRONE_BUILD_NUMBER}
 #      - ${DRONE_COMMIT_SHA:0:8}
+#触发条件：master收到push时才触发打包推送
     when:
       event: push
       branch: master
