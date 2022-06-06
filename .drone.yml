@@ -6,7 +6,7 @@ name: default
 
 steps:
 #自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
-  - name: clonesss
+  - name: custom clone
     image: alpine/git
 #挂载硬盘--容器绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
     volumes:
