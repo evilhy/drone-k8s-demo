@@ -1,6 +1,7 @@
 ##私有仓库配置
 ##参考https://plugins.drone.io/plugins/docker
 
+
 kind: pipeline
 name: default
 
