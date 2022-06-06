@@ -8,7 +8,7 @@ steps:
   - name: clonesss
     image: alpine/git
     commands:
-    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git .
+    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
   
   - name: build
