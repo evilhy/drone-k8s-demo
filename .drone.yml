@@ -9,11 +9,11 @@ steps:
     image: alpine/git
     volumes:
     - name: cache
-      path: /tmp
+      path: /mnt
     commands:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
-    
+    - cp -rf /tmp/evilhy.ssr.github.com /mnt
   
   - name: build
     image: golang:latest
