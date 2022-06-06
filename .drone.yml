@@ -14,10 +14,10 @@ steps:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
     
-volumes:
-- name: cache
-  host:
-    path: /mnt/dreon
+  volumes:
+  - name: cache
+    host:
+      path: /mnt/dreon
   
   - name: build
     image: golang:latest
