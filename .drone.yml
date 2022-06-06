@@ -5,7 +5,7 @@ kind: pipeline
 name: default
 
 steps:
-  - name: clone
+  - name: clonesss
     image: alpine/git
     commands:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git .
