@@ -1,13 +1,14 @@
 ##私有仓库配置
 ##参考https://plugins.drone.io/plugins/docker
 
-
 kind: pipeline
 name: default
 
 steps:
+#自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
   - name: clonesss
     image: alpine/git
+#挂载硬盘--容器绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
     volumes:
     - name: cache
       path: /mnt
@@ -15,7 +16,9 @@ steps:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
     - mkdir /mnt/evilhy.ssr.github.com
+    - mkdir /mnt/ts
     - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
+    - cp -rf /drone/src/.git/* /mnt/ts/
   
   - name: build
     image: golang:latest
@@ -96,6 +99,7 @@ steps:
   #     event: tag
   #     branch: master
 
+#挂载硬盘--物理绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
 volumes:
 - name: cache
   host:
