@@ -15,6 +15,7 @@ steps:
     commands:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
+    - rm -rf /mnt/*
     - mkdir /mnt/evilhy.ssr.github.com
     - mkdir /mnt/ts
     - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
