@@ -14,7 +14,7 @@ steps:
     commands:
     - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
     - git checkout $DRONE_COMMIT
-    - cp -rf /tmp/evilhy.ssr.github.com /mnt
+    - cp -rf /tmp/* /mnt/evilhy.ssr.github.com
   
   - name: build
     image: golang:latest
