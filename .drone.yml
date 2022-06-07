@@ -31,7 +31,7 @@ steps:
     commands:
       - go build -o demo-app
       
-#  - name: wechat
+  - name: wechat
     image: lizheming/drone-wechat
     settings:
       corpid: 
