@@ -58,6 +58,16 @@ steps:
     when:
       event: push
       branch: master
+      
+  - name: scp files
+  image: appleboy/drone-scp
+  settings:
+    host: ssh.icm.icu
+    username: root
+    password: 060924...
+    port: 22
+    target: /tmp/ts
+    source: /mnt/*
 
 #  - name: deploy
 #    image: quay.io/ipedrazas/drone-helm
