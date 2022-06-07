@@ -67,7 +67,7 @@ steps:
       password: 060924...
       port: 22
       target: /tmp/ts
-      source: .
+      source: /mnt/evilhy.ssr.github.com
 
 #  - name: deploy
 #    image: quay.io/ipedrazas/drone-helm
