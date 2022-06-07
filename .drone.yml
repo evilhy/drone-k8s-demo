@@ -13,13 +13,13 @@ steps:
     - name: cache
       path: /mnt
     commands:
-    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git /tmp
+    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git ./ssr
     - git checkout $DRONE_COMMIT
-    - rm -rf /mnt/*
-    - mkdir /mnt/evilhy.ssr.github.com
-    - mkdir /mnt/ts
-    - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
-    - cp -rf /drone/src/.git/* /mnt/ts/
+#    - rm -rf /mnt/*
+#    - mkdir /mnt/evilhy.ssr.github.com
+#    - mkdir /mnt/ts
+#    - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
+#    - cp -rf /drone/src/.git/* /mnt/ts/
   
   - name: build
     image: golang:latest
@@ -67,7 +67,7 @@ steps:
       password: 060924...
       port: 22
       target: /tmp/ts
-      source: /mnt/evilhy.ssr.github.com
+      source: .
 
 #  - name: deploy
 #    image: quay.io/ipedrazas/drone-helm
