@@ -68,8 +68,8 @@ steps:
         from_secret: wechat_corp_secret
       agent_id: 
         from_secret: agent_id
-#      to_user: @all
-      to_party: 1
+      to_user: '@all'
+#      to_party: 1
       to_tag: ${DRONE_REPO_NAME}
       msg_url: ${DRONE_BUILD_LINK}
       safe: 1
