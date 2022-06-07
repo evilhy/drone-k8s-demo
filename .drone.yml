@@ -89,25 +89,26 @@ steps:
     settings:
       host: ssh.icm.icu
       username: root
-      password: xxx
+      password: 
+        from_secret: ssh_password
       port: 22
       target: /tmp/ts
       source: .
 
-- name: ssh
-  image: appleboy/drone-ssh
-  settings:
-    host:
-      - ssh.icm.icu
-      - kk.icm.icu
-    username: root
-    password:
-      from_secret: ssh_password
-    port: 22
-    command_timeout: 2m
-    script:
-      - echo "Hello World"
-      - sh /home/freemem.sh
+  - name: ssh
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - ssh.icm.icu
+        - kk.icm.icu
+      username: root
+      password:
+        from_secret: ssh_password
+      port: 22
+      command_timeout: 2m
+      script:
+        - echo "Hello World"
+        - sh /home/freemem.sh
         
 #  - name: deploy
 #    image: quay.io/ipedrazas/drone-helm
