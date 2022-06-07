@@ -61,7 +61,7 @@ steps:
 #      - echo world
    
 
-  - name: docker
+#  - name: docker
     image: plugins/docker
     settings:
 #insecure http协议true https协议false
@@ -89,7 +89,7 @@ steps:
     settings:
       host: ssh.icm.icu
       username: root
-      password: 060924...
+      password: xxx
       port: 22
       target: /tmp/ts
       source: .adds
