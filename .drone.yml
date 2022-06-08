@@ -5,7 +5,7 @@ kind: pipeline
 name: default
 
 userinfo: &userinfo
-    buid: &buid go build -o demo-app
+    buid: &buid "go build -o demo-app"
 
 
 
