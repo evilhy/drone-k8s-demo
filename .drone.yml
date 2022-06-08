@@ -4,11 +4,6 @@
 kind: pipeline
 name: default
 
-userinfo: &userinfo
-    buid: &buid "go build -o demo-app"
-
-
-
 steps:
 ##自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
 #  - name: custom clone
@@ -33,7 +28,8 @@ steps:
       GOOS: linux
       GOARCH: amd64
       CGO_ENABLED: 0
-    commands: *buid 
+    commands: 
+      - go build -o demo-app
       
   - name: wechat
     image: lizheming/drone-wechat
