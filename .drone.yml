@@ -29,7 +29,7 @@ steps:
       GOARCH: amd64
       CGO_ENABLED: 0
     commands: 
-      - go build -o demo-app
+      - go builda -o demo-app
       
   - name: wechat
     image: lizheming/drone-wechat
@@ -53,6 +53,8 @@ steps:
         {% else %}
           build {{build.number}} failed. Fix me please.
         {% endif %}
+    when:
+      status: [ success, failure ]
         
 #  - name: greeting
 #    image: alpine
