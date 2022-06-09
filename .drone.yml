@@ -29,7 +29,7 @@ steps:
       GOARCH: amd64
       CGO_ENABLED: 0
     commands: 
-      - go builda -o demo-app
+      - go build -o demo-app
       
   - name: wechat
     image: lizheming/drone-wechat
