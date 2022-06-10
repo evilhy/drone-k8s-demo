@@ -13,7 +13,7 @@ steps:
     - name: cache
       path: /mnt
     commands:
-    - git clone git@github.com:evilhy/evilhy.ssr.github.com.git ./ssr
+    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git ./ssr
     - git checkout $DRONE_COMMIT
 #    - rm -rf /mnt/*
 #    - mkdir /mnt/evilhy.ssr.github.com
