@@ -31,7 +31,6 @@ steps:
     commands: 
       - go build -o demo-app
       
-        
 #  - name: greeting
 #    image: alpine
 #    commands:
