@@ -61,8 +61,7 @@ steps:
     when:
       event: push
       branch: master
-      
-      
+            
   - name: scp files
     image: appleboy/drone-scp
     settings:
