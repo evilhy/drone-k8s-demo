@@ -30,7 +30,9 @@ steps:
       CGO_ENABLED: 0
     commands: 
       - go build -o demo-app
-      
+      depends_on:
+      - clone
+      - custom clone
 #  - name: greeting
 #    image: alpine
 #    commands:
