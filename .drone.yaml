@@ -28,7 +28,10 @@ steps:
 ##    - cp -rf /drone/src/.git/* /mnt/ts/
   
   - name: build
-    image: golang:$(name)
+    image: golang:latest
+    variables:
+      name: demo-app
+      value: initialValue
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
       GOOS: linux
