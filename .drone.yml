@@ -135,30 +135,30 @@ steps:
   #     branch: master
   
   
-  - name: wechat
-    image: lizheming/drone-wechat
-    settings:
-      corpid: 
-        from_secret: wechat_corpid
-      corp_secret:
-        from_secret: wechat_corp_secret
-      agent_id: 
-        from_secret: agent_id
-      to_user: '@all'
-#      to_party: 1
-      to_tag: ${DRONE_REPO_NAME}
-      msg_url: ${DRONE_BUILD_LINK}
-      safe: 1
-      btn_txt: more
-      title: ${DRONE_REPO_NAME}
-      message: >
-        {%if success %}
-          build {{build.number}} succeeded. Good job.
-        {% else %}
-          build {{build.number}} failed. Fix me please.
-        {% endif %}
-    when:
-      status: [ success, failure ]
+#  - name: wechat
+#    image: lizheming/drone-wechat
+#    settings:
+#      corpid: 
+#        from_secret: wechat_corpid
+#      corp_secret:
+#        from_secret: wechat_corp_secret
+#      agent_id: 
+#        from_secret: agent_id
+#      to_user: '@all'
+##      to_party: 1
+#      to_tag: ${DRONE_REPO_NAME}
+#      msg_url: ${DRONE_BUILD_LINK}
+#      safe: 1
+#      btn_txt: more
+#      title: ${DRONE_REPO_NAME}
+#      message: >
+#        {%if success %}
+#          build {{build.number}} succeeded. Good job.
+#        {% else %}
+#          build {{build.number}} failed. Fix me please.
+#        {% endif %}
+#    when:
+#      status: [ success, failure ]
 
 #挂载硬盘--物理绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
 volumes:
