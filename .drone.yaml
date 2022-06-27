@@ -1,37 +1,30 @@
 ##私有仓库配置
 ##参考https://plugins.drone.io/plugins/docker
-variables:
-  name: demo-app
-  value: initialValue 
-
 kind: pipeline
 name: default
 
 steps:
-##自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
-#  - name: custom clone
-#    image: alpine/git
-##    depends_on:
-##      - clone
-##      - custom clone
-##挂载硬盘--容器绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
-#    volumes:
-#    - name: cache
-#      path: /mnt
-#    commands:
-#    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git ./ssr
-##    - git checkout $DRONE_COMMIT
-##    - rm -rf /mnt/*
-##    - mkdir /mnt/evilhy.ssr.github.com
-##    - mkdir /mnt/ts
-##    - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
-##    - cp -rf /drone/src/.git/* /mnt/ts/
+#自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
+  - name: custom clone
+    image: alpine/git
+#    depends_on:
+#      - clone
+#      - custom clone
+#挂载硬盘--容器绝对路径  参考：https://docs.drone.io/pipeline/docker/syntax/volumes/ --Host Volumes--
+    volumes:
+    - name: cache
+      path: /mnt
+    commands:
+    - git clone https://github.com/evilhy/evilhy.ssr.github.com.git ./ssr
+#    - git checkout $DRONE_COMMIT
+#    - rm -rf /mnt/*
+#    - mkdir /mnt/evilhy.ssr.github.com
+#    - mkdir /mnt/ts
+#    - cp -rf /tmp/* /mnt/evilhy.ssr.github.com/
+#    - cp -rf /drone/src/.git/* /mnt/ts/
   
   - name: build
     image: golang:latest
-    variables:
-      name: demo-app
-      value: initialValue
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
       GOOS: linux
