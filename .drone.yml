@@ -4,6 +4,9 @@
 kind: pipeline
 name: default
 
+variables:
+- name: demo-app
+  value: initialValue 
 
 steps:
 #自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
@@ -33,7 +36,8 @@ steps:
       GOARCH: amd64
       CGO_ENABLED: 0
     commands: 
-      - go build -o demo-app
+      - echo $name
+      - go build -o $name
 #  - name: greeting
 #    image: alpine
 #    commands:
