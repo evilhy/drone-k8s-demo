@@ -5,7 +5,7 @@ kind: pipeline
 name: default
 
 variables:
-- name: demo-app
+  name: demo-app
   value: initialValue 
 
 steps:
