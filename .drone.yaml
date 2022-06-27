@@ -8,6 +8,7 @@ variables:
   name: demo-app
   value: initialValue 
 
+
 steps:
 #自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
   - name: custom clone
