@@ -31,8 +31,7 @@ steps:
       GOARCH: amd64
       CGO_ENABLED: 0
     commands: 
-      - echo $(name)
-      - go build -o $(name)
+      - go build -o demo-app
 #  - name: greeting
 #    image: alpine
 #    commands:
