@@ -1,13 +1,11 @@
 ##私有仓库配置
 ##参考https://plugins.drone.io/plugins/docker
-
-kind: pipeline
-name: default
-
 variables:
   name: demo-app
   value: initialValue 
 
+kind: pipeline
+name: default
 
 steps:
 #自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
