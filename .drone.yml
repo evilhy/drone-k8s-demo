@@ -4,9 +4,6 @@
 kind: pipeline
 name: default
 
-environment:
-  ML: demo-app
-
 
 steps:
 #自定义clone地址 参考： https://docs.drone.io/pipeline/docker/syntax/cloning/   --Custom Logic--
@@ -35,9 +32,8 @@ steps:
       GOOS: linux
       GOARCH: amd64
       CGO_ENABLED: 0
-      ML: demo-app
     commands: 
-      - go build -o ${ML}
+      - go build -o demo-app
 #  - name: greeting
 #    image: alpine
 #    commands:
