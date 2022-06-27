@@ -37,7 +37,6 @@ steps:
 #    commands:
 #      - echo hello
 #      - echo world
-   
 
   - name: docker
     image: plugins/docker
