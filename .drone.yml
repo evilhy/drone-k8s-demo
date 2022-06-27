@@ -3,6 +3,7 @@
 
 kind: pipeline
 name: default
+
 environment:
   ML: demo-app
 
@@ -34,8 +35,9 @@ steps:
       GOOS: linux
       GOARCH: amd64
       CGO_ENABLED: 0
+      ML: demo-app
     commands: 
-      - go build -o ${ML}
+      - go build -o $ML
 #  - name: greeting
 #    image: alpine
 #    commands:
